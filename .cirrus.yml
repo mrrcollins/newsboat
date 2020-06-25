@@ -65,7 +65,7 @@ freebsd_task:
         - mkdir fakeroot
         - make DESTDIR=fakeroot install
         - make DESTDIR=fakeroot uninstall
-        - [ $(find fakeroot -type f -print | wc -l) -eq 0 ]
+        - test $(find fakeroot -type f -print | wc -l) -eq 0 ]
     before_cache_script: *before_cache_script
 
 macos_task:
